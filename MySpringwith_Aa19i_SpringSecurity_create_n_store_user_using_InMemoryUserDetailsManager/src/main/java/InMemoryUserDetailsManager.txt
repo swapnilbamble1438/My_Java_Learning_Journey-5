@@ -1,0 +1,18 @@
+
+
+InMemoryUserDetailsManager(c)
+		|						createUser(){}
+		|                       deleteUser(){}
+	    |                       updateUser(){}
+	    |						updatePassword(){}                    
+	    |                       loadUserByUsername(){}
+	   \|/
+	UserDetailsManager(I)  
+	    |						createUser(){}
+		|                       deleteUser(){}
+	    |                       updateUser(){}
+	    |						updatePassword(){}                    
+	    |                       
+	   \|/ 
+	UserDetailsService(I)
+	                           loadUserByUsername(){}
