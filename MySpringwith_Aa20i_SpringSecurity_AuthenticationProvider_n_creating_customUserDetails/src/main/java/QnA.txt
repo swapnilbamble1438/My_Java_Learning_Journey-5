@@ -1,0 +1,24 @@
+Q1) What is Authentication?
+Ans To prove who you are
+
+Q2) Types of Authentication?
+Ans i) Inmemory Authentication
+	ii) JDBC(Database) Authentication
+	iii) 
+	
+Q3) Filter Chain?
+Ans	when a request comes it need to passed through it
+
+Q4) What is Authorization?
+Ans To prove what access you have
+
+Q5) Datasource
+Ans It helps you to connect to database
+	to get user details
+	
+Q6) Inmemory Authentication 
+Ans We store our Userdetails in server memory
+
+Q7) JDBC Authentication
+Ans We can verify our data or Userdetails from Database
+
