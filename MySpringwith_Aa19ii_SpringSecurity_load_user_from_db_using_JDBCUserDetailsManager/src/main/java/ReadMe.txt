@@ -1,0 +1,16 @@
+Add Dependencies
+
+spring web mvc
+servlet-api
+jstl
+
+spring jdbc
+mysql connector
+
+spring security taglibs
+
+spring security-config 
+security security web ( it should be same version as that of spring security config)
+
+This project is same as like
+A18vi_setup_Signup_n_JDBC_Auth
