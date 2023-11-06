@@ -1,0 +1,40 @@
+Enter this queries in MySQL:
+
+create database springmvcsecurity;
+
+use springmvcsecurity;
+
+create table users(
+	username varchar(50) not null primary key,
+	password varchar(500) not null,
+	enabled boolean not null
+	);
+	
+	
+CREATE TABLE authorities (
+  username VARCHAR(50) NOT NULL,
+  authority VARCHAR(50) NOT NULL,
+  INDEX fk_authorities_users_idx (username ASC) VISIBLE,
+  CONSTRAINT fk_authorities_users
+    FOREIGN KEY (username)
+    REFERENCES users (username)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);	
+	
+
+
+insert into users (username,password,enabled) values ("admin","$2a$10$rKUIC6LlIE4q.8zNV8rmTuqqVDaCV9EjUwYrlIPSezjjRuvaT8T5S",1);
+insert into users (username,password,enabled) values ("normal","$2a$10$XrEv2vojJdaYs9jfMtvWa.YUYLPGd5zRh1ahQqZ/xymlhM71eUvnW",1);
+insert into users (username,password,enabled) values ("both","$2a$10$173dJ33MBABpmn3xl3erPeL8UAEXdNU7F8zuAmHQWD8ZIpqRGfcPe",1);
+
+
+insert into authorities (username,authority) values ("admin","ADMIN");
+insert into authorities (username,authority) values ("normal","NORMAL");
+insert into authorities (username,authority) values ("both","ADMIN");
+insert into authorities (username,authority) values ("both","NORMAL");
+
+
+====== this are not queries ========================
+admin : $2a$10$rKUIC6LlIE4q.8zNV8rmTuqqVDaCV9EjUwYrlIPSezjjRuvaT8T5S
+normal : $2a$10$XrEv2vojJdaYs9jfMtvWa.YUYLPGd5zRh1ahQqZ/xymlhM71eUvnW 
+both : $2a$10$173dJ33MBABpmn3xl3erPeL8UAEXdNU7F8zuAmHQWD8ZIpqRGfcPe
