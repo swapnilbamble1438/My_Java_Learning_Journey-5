@@ -1,0 +1,45 @@
+Enter this queries in MySQL:
+
+create database springmvcsecurity;
+
+use springmvcsecurity;
+
+
+	
+	CREATE TABLE customusers (
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(500) NOT NULL,
+  enabled boolean NOT NULL,
+  PRIMARY KEY (username));
+	
+	
+CREATE TABLE customauthorities (
+  username VARCHAR(50) NOT NULL,
+  authority VARCHAR(50) NOT NULL,
+  INDEX fk_customauthorities_customusers_idx (username ASC) VISIBLE,
+  CONSTRAINT fk_customauthorities_customusers
+    FOREIGN KEY (username)
+    REFERENCES customusers (username)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);	
+    
+    
+   
+	
+
+
+insert into customusers (username,password,enabled) values ("admin","admin",1);
+insert into customusers (username,password,enabled) values ("normal","normal",1);
+insert into customusers (username,password,enabled) values ("both","both",1);
+
+
+insert into customauthorities (username,authority) values ("admin","ADMIN");
+insert into customauthorities (username,authority) values ("normal","NORMAL");
+insert into customauthorities (username,authority) values ("both","ADMIN");
+insert into customauthorities (username,authority) values ("both","NORMAL");
+
+
+====== this are not queries ========================
+admin : $2a$10$rKUIC6LlIE4q.8zNV8rmTuqqVDaCV9EjUwYrlIPSezjjRuvaT8T5S
+normal : $2a$10$XrEv2vojJdaYs9jfMtvWa.YUYLPGd5zRh1ahQqZ/xymlhM71eUvnW 
+both : $2a$10$173dJ33MBABpmn3xl3erPeL8UAEXdNU7F8zuAmHQWD8ZIpqRGfcPe
